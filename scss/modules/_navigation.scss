@@ -1,0 +1,32 @@
+.navigation {
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+        list-style-type: none;
+
+        &_item {
+            font-size: $f40;
+            line-height: 1.2;
+            font-weight: 300;
+
+            a {
+                text-decoration: none;
+                color: $color-default;
+                @include transition(.2s, color);
+            }
+
+            &:hover {
+                a {
+                    color: $color-hover;
+                }
+            }
+        }
+    }
+    &--main_header{
+        padding: 3.2rem 11rem;
+        .navigation__list{
+            justify-content: space-between;
+        }
+    }
+}

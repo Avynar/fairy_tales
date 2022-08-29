@@ -1,0 +1,59 @@
+.contacts {
+  display: flex;
+  justify-content: center;
+
+  &-wrapper {
+    position: relative;
+    display: flex;
+
+    &:hover {
+      .contacts__info {
+        opacity: 100%;
+        @include transform(translateX(-30rem));
+      }
+
+      .contacts__photo {
+        width: 68rem;
+
+        &_wrapper {
+          border-radius: 15%;
+          @include transform(translateX(30rem));
+        }
+      }
+    }
+  }
+
+  &__info {
+    width: 57.6rem;
+    position: absolute;
+    opacity: 0;
+    @include transition(.5s, all);
+
+    &_title {
+      font-family: $headers-font;
+      font-size: $f128;
+      margin-bottom: 5.8rem;
+    }
+
+    &_text {
+      font-weight: 200;
+      font-size: $f32;
+      line-height: 1.25;
+    }
+  }
+
+  &__photo {
+    position: relative;
+    z-index: 5;
+    width: 53rem;
+    height: 53rem;
+    @include background('../img/contacts_img/Anastasiya.jpg');
+    @include transition(.5s, all);
+
+    &_wrapper {
+      @include transition(.5s, all);
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+}

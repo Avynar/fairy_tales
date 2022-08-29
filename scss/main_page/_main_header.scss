@@ -1,0 +1,37 @@
+.main_header {
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  margin-bottom: .6rem;
+
+  &__title-wrapper {
+    z-index: 10;
+    position: absolute;
+    width: calc(100vw + 13.3rem);
+    @include transform(translateY(-45.7rem) translateX(-15rem));
+  }
+
+  &__title {
+    font-family: $headers-font;
+    text-transform: uppercase;
+    font-size: $f600;
+  }
+
+  &__left_column {
+    width: 75.9rem;
+    @include bgPhotoLink("../img/main_page_img/main_header/girl_in_helm.jpg");
+  }
+
+  &__right_column {
+    width: 97.2rem;
+  }
+
+  &__author_wrapper {
+    display: flex;
+    height: 102.9rem;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: $f48;
+  }
+}

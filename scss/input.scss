@@ -1,0 +1,30 @@
+// ----------------Базовые и общие стили----------------
+@import "default/default";
+@import "default/mixins";
+@import "default/variables";
+@import "default/commons";
+
+// ----------------Модули----------------
+@import "./modules/_photo_link.scss";
+@import "./modules/_navigation.scss";
+@import "./modules/_header.scss";
+@import "./modules/_footer.scss";
+
+// ----------------Анимации----------------
+@import "./keyframes/_dummyAnimation.scss";
+@import "./keyframes/_opacity.scss";
+
+// ----------------Стили основной страницы----------------
+@import "main_page/main_header";
+@import "main_page/first_page";
+@import "main_page/second_page";
+@import "main_page/third_page";
+
+// ----------------Стили побочных страниц----------------
+@import "page-contacts/_contacts.scss";
+@import "./page-stories/_stories.scss";
+
+@font-face {
+  font-family: "Serifiqo4FRegular";
+  src: url('../fonts/Serifiqo4FRegular.woff');
+}

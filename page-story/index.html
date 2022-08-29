@@ -23,44 +23,58 @@
         </div>
     </header>
     <main class="main">
-        <section class="stories">
+        <section class="stories stories--active">
             <div class="stories_wrapper">
-                <div class="story" id="scary_beautiful">
+                <div class="story" id="scary_beautiful" data-length="21">
                     <a href="#" class="photo_link">
-                <div class="photo_link_wrapper">
-                    <h3>scary beautiful</h3>
-                    <p>к серии</p>
+                        <div class="photo_link_wrapper">
+                            <h3>scary beautiful</h3>
+                            <p>к серии</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-                </div>
-                <div class="story" id="muse">
+                <div class="story" id="muse" data-length="12">
                     <a href="#" class="photo_link">
-                <div class="photo_link_wrapper">
-                    <h3>muse</h3>
-                    <p>к серии</p>
+                        <div class="photo_link_wrapper">
+                            <h3>muse</h3>
+                            <p>к серии</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-                </div>
-                <div class="story" id="main_character">
+                <div class="story" id="main_character" data-length="9">
                     <a href="#" class="photo_link">
-                <div class="photo_link_wrapper">
-                    <h3>the main character</h3>
-                    <p>к серии</p>
+                        <div class="photo_link_wrapper">
+                            <h3>the main character</h3>
+                            <p>к серии</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
-                </div>
-                <div class="story" id="red_apple">
+                <div class="story" id="red_apple" data-length="9">
                     <a href="#" class="photo_link">
-                <div class="photo_link_wrapper">
-                    <h3>red apple</h3>
-                    <p>к серии</p>
-                </div>
-            </a>
+                        <div class="photo_link_wrapper">
+                            <h3>red apple</h3>
+                            <p>к серии</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
+        <section class="album">
+            <header class="album__header">
+                <h1 class="album__header_title fw400">
+                </h1>
+                <div class="album__header_img"></div>
+            </header>
+            <section class="album__photo_list" id="photoList">
+            </section>
+        </section>
     </main>
+
     <footer class="footer">
+        <div class="scrollback dn" id="story_scrollback">
+            <a href="#">
+            </a>
+        </div>
         <div class="social_icons">
             <ul class="social_icons__list">
                 <li class="social_icons__list_item">
@@ -79,6 +93,6 @@
         </div>
     </footer>
 </div>
-<script src="../js/_scroll-story.js"></script>
+<script src="js/scroll-story.js"></script>
 </body>
 </html>

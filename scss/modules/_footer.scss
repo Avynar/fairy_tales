@@ -1,0 +1,95 @@
+.footer {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8.8rem;
+
+  a {
+    display: block;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      opacity: 0;
+      height: inherit;
+      width: inherit;
+      @include transition(.2s, opacity);
+    }
+  }
+
+  .scrollback {
+    a {
+      height: 10.9rem;
+      width: 8.3rem;
+      @include background("../img/modules/footer/arrows/arrows.png");
+
+      &::before {
+        @include background("../img/modules/footer/arrows/arrows_hover.png");
+      }
+    }
+
+    &:hover {
+      a::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .social_icons {
+    &__list {
+      list-style-type: none;
+      display: flex;
+      align-items: flex-end;
+      gap: 6.7rem;
+
+      &_item {
+        &:nth-child(1) {
+          a {
+            @include background("../img/modules/footer/icons/TG.png");
+            height: 4.2rem;
+            width: 4.65rem;
+
+            &::before {
+              @include background("../img/modules/footer/icons/TG_hover.png");
+            }
+          }
+        }
+
+        &:nth-child(2) {
+
+          a {
+            @include background("../img/modules/footer/icons/BE.png");
+            height: 4.2rem;
+            width: 6.6rem;
+
+            &::before {
+              @include background("../img/modules/footer/icons/BE_hover.png");
+            }
+          }
+        }
+
+        &:nth-child(3) {
+
+          a {
+            @include background("../img/modules/footer/icons/VK.png");
+            height: 5rem;
+            width: 5rem;
+
+            &::before {
+              @include background("../img/modules/footer/icons/VK_hover.png");
+            }
+          }
+        }
+
+        &:hover {
+          a::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

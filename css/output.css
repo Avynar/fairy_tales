@@ -42,6 +42,9 @@ p,
 .fz48 {
   font-size: 4.8rem; }
 
+.dn {
+  display: none; }
+
 .photo_link {
   width: 100%;
   height: 100%;
@@ -82,7 +85,8 @@ p,
       border-top: 1px solid #fff; }
 
 .story .photo_link {
-  align-items: end; }
+  align-items: end;
+  pointer-events: none; }
   .story .photo_link_wrapper {
     margin-bottom: 5.3rem;
     width: 41.2rem; }
@@ -113,8 +117,7 @@ p,
 .header {
   display: flex;
   justify-content: center;
-  padding: 1.9rem 0;
-  margin-bottom: 5rem; }
+  margin-top: 2rem; }
   .header .container {
     width: 81.7rem;
     gap: 9rem; }
@@ -130,46 +133,48 @@ p,
       background-size: cover; }
 
 .footer {
-  margin-top: 6rem;
-  padding: 3rem 0 3rem;
+  margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 8.8rem; }
-  .footer .scrollback {
+  .footer a {
+    display: block;
+    position: relative; }
+    .footer a::before {
+      position: absolute;
+      content: '';
+      opacity: 0;
+      height: inherit;
+      width: inherit;
+      -webkit-transition: 0.2s opacity;
+      -o-transition: 0.2s opacity;
+      -moz-transition: 0.2s opacity;
+      transition: 0.2s opacity; }
+  .footer .scrollback a {
+    height: 10.9rem;
+    width: 8.3rem;
     background-image: url("../img/modules/footer/arrows/arrows.png");
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    -webkit-transition: 0.2s background-image;
-    -o-transition: 0.2s background-image;
-    -moz-transition: 0.2s background-image;
-    transition: 0.2s background-image; }
-    .footer .scrollback a {
-      display: block;
-      height: 10.9rem;
-      width: 8.3rem; }
-    .footer .scrollback:hover {
+    background-size: cover; }
+    .footer .scrollback a::before {
       background-image: url("../img/modules/footer/arrows/arrows_hover.png");
       background-repeat: no-repeat;
       background-position: center;
       -webkit-background-size: cover;
       -o-background-size: cover;
       background-size: cover; }
+  .footer .scrollback:hover a::before {
+    opacity: 1; }
   .footer .social_icons__list {
     list-style-type: none;
     display: flex;
     align-items: flex-end;
     gap: 6.7rem; }
-    .footer .social_icons__list_item a {
-      display: block;
-      -webkit-transition: 0.2s background;
-      -o-transition: 0.2s background;
-      -moz-transition: 0.2s background;
-      transition: 0.2s background; }
     .footer .social_icons__list_item:nth-child(1) a {
       background-image: url("../img/modules/footer/icons/TG.png");
       background-repeat: no-repeat;
@@ -179,13 +184,13 @@ p,
       background-size: cover;
       height: 4.2rem;
       width: 4.65rem; }
-    .footer .social_icons__list_item:nth-child(1):hover a {
-      background-image: url("../img/modules/footer/icons/TG_hover.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      -webkit-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover; }
+      .footer .social_icons__list_item:nth-child(1) a::before {
+        background-image: url("../img/modules/footer/icons/TG_hover.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; }
     .footer .social_icons__list_item:nth-child(2) a {
       background-image: url("../img/modules/footer/icons/BE.png");
       background-repeat: no-repeat;
@@ -195,13 +200,13 @@ p,
       background-size: cover;
       height: 4.2rem;
       width: 6.6rem; }
-    .footer .social_icons__list_item:nth-child(2):hover a {
-      background-image: url("../img/modules/footer/icons/BE_hover.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      -webkit-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover; }
+      .footer .social_icons__list_item:nth-child(2) a::before {
+        background-image: url("../img/modules/footer/icons/BE_hover.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; }
     .footer .social_icons__list_item:nth-child(3) a {
       background-image: url("../img/modules/footer/icons/VK.png");
       background-repeat: no-repeat;
@@ -211,13 +216,15 @@ p,
       background-size: cover;
       height: 5rem;
       width: 5rem; }
-    .footer .social_icons__list_item:nth-child(3):hover a {
-      background-image: url("../img/modules/footer/icons/VK_hover.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      -webkit-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover; }
+      .footer .social_icons__list_item:nth-child(3) a::before {
+        background-image: url("../img/modules/footer/icons/VK_hover.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; }
+    .footer .social_icons__list_item:hover a::before {
+      opacity: 1; }
 
 @keyframes dummyAnimation {
   0% {
@@ -226,6 +233,11 @@ p,
     opacity: 100%; }
   100% {
     opacity: 48%; } }
+@keyframes opUp {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 .main_header {
   position: relative;
   z-index: 5;
@@ -404,11 +416,7 @@ p,
   justify-content: center; }
   .contacts-wrapper {
     position: relative;
-    display: flex;
-    -webkit-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    transition: 0.5s all; }
+    display: flex; }
     .contacts-wrapper:hover .contacts__info {
       opacity: 100%;
       -webkit-transform: translateX(-30rem);
@@ -417,14 +425,13 @@ p,
     .contacts-wrapper:hover .contacts__photo {
       width: 68rem; }
       .contacts-wrapper:hover .contacts__photo_wrapper {
-        border-radius: 25%;
+        border-radius: 15%;
         -webkit-transform: translateX(30rem);
         -ms-transform: translateX(30rem);
         transform: translateX(30rem); }
   .contacts__info {
     width: 57.6rem;
     position: absolute;
-    z-index: 2;
     opacity: 0;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -440,7 +447,7 @@ p,
       line-height: 1.25; }
   .contacts__photo {
     position: relative;
-    z-index: 3;
+    z-index: 5;
     width: 53rem;
     height: 53rem;
     background-image: url("../img/contacts_img/Anastasiya.jpg");
@@ -462,7 +469,11 @@ p,
       overflow: hidden; }
 
 .stories {
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 3rem 0 3rem;
+  display: none; }
+  .stories--active {
+    display: block; }
   .stories_wrapper {
     position: relative;
     display: flex;
@@ -474,8 +485,7 @@ p,
     transition: 0.5s all; }
   .stories .story {
     min-width: 50rem;
-    height: 70rem;
-    background-color: #fff;
+    height: 65rem;
     border-radius: 2%; }
   .stories #scary_beautiful {
     background-image: url("../img/stories/scary_beautiful.jpg");
@@ -529,6 +539,59 @@ p,
         opacity: 100%; }
         .stories #red_apple:hover .photo_link::before {
           opacity: 20%; }
+
+.album {
+  display: none;
+  overflow-x: hidden;
+  margin-bottom: 10rem; }
+  .album--active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: no-wrap; }
+  .album__header {
+    margin: 10rem 0 4.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: auto;
+    align-items: center;
+    flex-wrap: no-wrap;
+    gap: 10rem; }
+    .album__header_title {
+      font-family: "Serifiqo4FRegular", serif;
+      font-size: 12.8rem; }
+    .album__header_img {
+      background-image: url("");
+      background-repeat: no-repeat;
+      background-position: center;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      width: 100vw;
+      height: 66rem; }
+  .album__photo_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: auto;
+    flex-wrap: wrap;
+    row-gap: 5rem;
+    padding-bottom: 2rem;
+    animation: opUp 1s linear; }
+    .album__photo_list_item {
+      -webkit-transition: 0.3s transform;
+      -o-transition: 0.3s transform;
+      -moz-transition: 0.3s transform;
+      transition: 0.3s transform; }
+      .album__photo_list_item img {
+        width: 54rem;
+        height: 80rem; }
+      .album__photo_list_item:hover {
+        cursor: pointer;
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05); }
 
 @font-face {
   font-family: "Serifiqo4FRegular";

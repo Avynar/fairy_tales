@@ -1,0 +1,60 @@
+//-----------------Подключение в нужное место--------------------
+// @bgPhotoLink($url)
+
+.photo_link {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  @include transition(opacity, .2s);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  z-index: 11;
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background-color: #000;
+    opacity: 0;
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h3 {
+      font-family: $headers-font;
+      font-weight: 400;
+      font-size: $f48;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    p {
+      z-index: 2;
+      text-align: center;
+      font-weight: 300;
+      font-size: $f20;
+      width: 13.3rem;
+      border-top: 1px solid #fff;
+    }
+  }
+}
+
+
+//page-stories перенос надписи вниз блока + затемнение
+.story{
+  .photo_link{
+    align-items: end;
+    pointer-events: none;
+    &_wrapper{
+      margin-bottom: 5.3rem;
+      width: 41.2rem;
+    }
+  }
+}
